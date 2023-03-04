@@ -1,0 +1,381 @@
+
+.body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.piste{
+    height: 10vh;
+    background-color: rgb(36, 34, 34);
+    position: relative;
+    
+}
+.points{
+    width: 90%;
+    height: 30%;
+    margin: 0 auto;
+    border-bottom: 25px dotted white;
+}
+.cercle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color:yellow;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    animation: courir 5s 0.3s linear infinite;
+    
+}
+
+.guemign{
+    width: 70%;
+    height: 70%;
+    background-color:rgb(36, 34, 34);
+    margin: 0 24px ;
+    margin-top: 13px;
+    clip-path: polygon(0 52%, 100% 88%, 100% 12%);
+    animation: guemignn 1s infinite linear;
+}
+
+.fantom{
+    width:75px;
+    height: 75px;
+    background-color: blue;
+    bottom: 5px;
+    left: 100px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    display: flex;
+    position:absolute;
+    animation: courir 5s infinite linear,couleur 5s infinite linear;
+}
+
+.fantom::after{
+    content: '';
+    position:absolute; 
+    bottom: 0;
+    left: 0;
+    width: 100%;  
+    height: 30px; 
+    background: linear-gradient(-45deg,rgb(36, 34, 34 ) 10px, transparent 10%),
+    linear-gradient(45deg,rgb(36, 34, 34 ) 10px, transparent 10%);
+    background-size:20px ;
+    
+}
+.yeuxfantom1{
+    width: 15px;
+    height: 20px;
+    border: 2px solid;
+    border-radius: 50%;
+    margin-top: 15px;
+    background-color: white;
+    margin-left: 15px;
+    
+}    
+.yeuxfantom2{
+    width: 15px;
+    height: 20px;
+    border: 2px solid;
+    border-radius: 50%;
+    margin-top: 15px;
+    background-color: white;
+    margin-right: 15px;
+}
+.iris1{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%; 
+    background-color:blue;  
+    margin-left: 4px;
+    margin-top: 3px;
+    animation: beutt1 5s infinite linear; 
+}
+.iris2{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%; 
+    background-color:red;  
+    margin-left: 4px; 
+    margin-top: 3px;
+    animation: beutt2 5s infinite linear; 
+}
+
+@keyframes courir {
+   
+    0%{
+        left: 0;
+    }
+  
+    100%{
+        left: 100%;  
+    }
+}
+
+@keyframes guemignn {
+    0%{
+        clip-path: polygon(0 52%, 100% 88%, 100% 12%);
+    }
+    10%{
+        clip-path: polygon(0 48%, 100% 48%, 100% 47%);
+    }
+    30%{
+        clip-path: polygon(0 52%, 100% 88%, 100% 12%);
+    }
+    50%{
+        clip-path: polygon(0 48%, 100% 48%, 100% 47%);
+    }
+    70%{
+        clip-path: polygon(0 52%, 100% 88%, 100% 12%);
+    }
+    80%{
+        clip-path: polygon(0 48%, 100% 48%, 100% 47%);
+    }
+    100%{
+        clip-path: polygon(0 52%, 100% 88%, 100% 12%);
+    }
+
+}
+
+@keyframes beutt1 {
+    0%{
+        transform: translateX(4px);
+       
+    }
+    25%{
+        
+        transform: translateX(-7px);
+    }
+    50%{
+        
+        transform: translateX(4px);
+    }
+    75%{
+       
+        transform: translateX(-7px);
+    }
+    100%{
+       
+        transform: translateX(4px);
+    }
+}
+@keyframes beutt2 {
+    0%{
+        transform: translateX(-5px);
+    }
+    25%{
+        transform: translateX(7px);
+    }
+    50%{
+        transform: translateX(-5px);
+    }
+    75%{
+        transform: translateX(7px);
+    }
+    100%{
+        transform: translateX(-5px);
+    }
+}
+
+@keyframes couleur {
+    0%{
+        background-color: blue;
+    }
+    25%{
+        background-color: red;
+    }
+    75%{
+        background-color: blue;
+    }
+    100%{background-color:red;
+
+    }
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+
+.part2{
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+ }
+ .emoji{
+    width: 150px;
+    height: 150px;
+    border: 3px solid rgb(200, 142, 8);
+    border-radius: 50%;
+    margin: 0 10px;
+    background-color: rgb(255, 207, 35);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+ }
+ 
+ .emoji .yeux1, .yeux11{
+    width: 25px;
+    height: 25px;
+    border: 2px solid;
+    border-radius: 50%;
+    margin-top: 45px;
+    background-color: white;
+    animation: weundel 1s infinite linear; 
+    box-shadow: 4px 4px 3px gray inset;
+}
+.yeux1{
+    margin-right: 25px;
+}
+.yeux11{
+    margin-left: 25px;
+}
+.rond{
+    width: 8px;
+    height: 8px;
+    border: 2px solid;
+    border-radius: 50%; 
+    background-color: black;  
+    margin-left: 4px; 
+}
+@keyframes weundel {
+    0%{
+        transform:rotate(0deg)    
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+.yeux2{
+    width: 25px;
+    height: 25px;
+    border: 2px solid;
+    border-radius: 50%;
+    margin-top: 45px;
+    background-color: white; 
+    margin-left: 50px;
+    margin-right: 10px; 
+    box-shadow: 4px 4px 3px gray inset;  
+}
+
+.bouche1{
+    border: 3px solid maroon;
+    background-color: maroon;
+    width: 40px;
+    height: 5px;
+    border-radius: 7px;
+    position: absolute;
+    top: 115px;
+} 
+ 
+.yeuxpiss{
+    border: 7px solid rgb(110, 7, 7);
+    width: 30px;
+    height: 30px;
+    border-radius: 50px; 
+    margin-top: 50px;
+    border-bottom:transparent ;
+    border-right:transparent ;
+    border-left:transparent ;
+    
+}
+.rond22{
+    width: 8px;
+    height: 8px;
+    border: 2px solid;
+    border-radius: 50%; 
+    background-color: black;  
+    margin-left: 7px; 
+    margin-top: 5px;    
+}
+
+.bouche2{
+
+    border: 15px solid maroon;
+    width: 70px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 75px;
+    border-right:transparent ;
+    border-left: transparent;
+    border-top: transparent;
+}
+.lamign{
+    
+    background-color: rgb(227, 17, 87);  
+    width: 25px;
+    height: 40px;  
+    margin-left: 20px; 
+    margin-top: 45px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;                                                                                                                 
+}
+.trailamign{
+    border: 1px solid rgb(83, 40, 50);
+    background-color: rgb(83, 40, 50);  
+    width: 0.5px;
+    height: 20px;
+    margin-left: 11px;    
+}
+.yeux3{
+    width: 90px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.rond3{
+    width: 13px;
+    height: 17px;
+    border: 2px solid maroon;
+    border-radius: 50%; 
+    background-color: maroon;
+       
+}
+.rond33{
+    width: 13px;
+    height: 17px;
+    border: 2px solid maroon;
+    border-radius: 50%; 
+    background-color: maroon;        
+}
+
+.bouche3{
+    border: 10px solid maroon;
+    width: 60px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 115px;
+    border-right:transparent ;
+    border-left: transparent;
+    border-bottom: transparent;
+}
+
+
+
+ 
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
